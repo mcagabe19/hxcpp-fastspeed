@@ -65,6 +65,7 @@
   <flag value="-fexceptions"/>
   <flag value="-g" if="HXCPP_DEBUG_LINK"/>
   <flag value="-c"/>
+  <flag value="-std=c++17"/>
   <flag value="-fpic"/>
   <flag value="-O3" unless="debug"/>
   
