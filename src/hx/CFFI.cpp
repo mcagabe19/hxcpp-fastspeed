@@ -186,7 +186,7 @@ String __hxcpp_get_kind(Dynamic inObject)
 }
 
 
-#define THROWS throw(Dynamic)
+//#define THROWS throw(Dynamic)
 //#define THROWS
 
 
@@ -207,7 +207,7 @@ void hx_error() THROWS
 }
 
 
-void val_throw(hx::Object * arg1) THROWS
+/*void val_throw(hx::Object * arg1) THROWS
 {
    if (arg1==0)
       hx::Throw( null() );
@@ -223,7 +223,7 @@ void hx_fail(const char * inMessage,const char * inFile,int inLine)
    else
       hx::Throw( HX_CSTRING("Failure ") + String(inMessage) );
 }
-
+*/
 
 
 // Determine hx::Object * type
@@ -235,7 +235,7 @@ int val_type(hx::Object * arg1)
 }
 
 \
-vkind val_kind(hx::Object * arg1) THROWS
+/*vkind val_kind(hx::Object * arg1) THROWS
 {
    if (arg1==0)
       hx::Throw( HX_CSTRING("Value has no 'kind'") );
@@ -243,7 +243,7 @@ vkind val_kind(hx::Object * arg1) THROWS
    if (type<valtAbstractBase)
       hx::Throw( HX_CSTRING("Value has no 'kind'") );
    return (vkind)(intptr_t)(type);
-}
+}*/
 
 
 void * val_to_kind(hx::Object * arg1,vkind arg2)
@@ -677,7 +677,7 @@ void val_buffer(buffer inBuffer,value inValue)
 
 
 
-
+/*
 // Call Function 
 hx::Object * val_call0(hx::Object * arg1) THROWS
 {
@@ -798,7 +798,7 @@ void hxcpp_alloc_field_numeric(hx::Object * arg1,int arg2,double arg3)
 {
    return alloc_field_numeric(arg1,arg2,arg3);
 }
-
+*/
 
 
 hx::Object * val_field(hx::Object * arg1,int arg2) THROWS
@@ -883,7 +883,7 @@ hx::Object * alloc_raw_string(int length)
 {
    return Dynamic( String( (HX_CHAR *) alloc_private(length+1), length) ).GetPtr();
 }
-
+/*
 void  val_gc(hx::Object * arg1,hx::finalizer arg2) THROWS
 {
    hx::Abstract_obj *abstract = dynamic_cast<hx::Abstract_obj *>(arg1);
@@ -900,6 +900,7 @@ void  val_gc_ptr(void * arg1,hxPtrFinalizer arg2) THROWS
 {
    hx::Throw(HX_CSTRING("Finalizer not supported here"));
 }
+*/
 
 void  val_gc_add_root(hx::Object **inRoot)
 {
